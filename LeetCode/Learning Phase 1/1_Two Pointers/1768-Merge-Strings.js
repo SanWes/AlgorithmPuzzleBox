@@ -87,4 +87,5 @@ var mergeAlternately = function(word1, word2) {
 console.log(mergeAlternately("ab", "pqrs"));
 console.log(mergeAlternately("arby", "bpaqres"));
 console.log(mergeAlternately("abcd", "pq"));
+console.log(mergeAlternately("xyz", "abclmnop"));
 
