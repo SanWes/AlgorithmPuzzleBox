@@ -10,8 +10,7 @@ This repository serves as a collection of coding exercises and solutions in vari
 2. [Languages](#languages)
 3. [Folder Structure](#folder-structure)
 4. [Contributions](#contributions)
-5. [License](#license)
-6. [Contact Information](#contact-information)
+5. [Contact Information](#contact-information)
 
 ## Introduction
 
@@ -37,9 +36,6 @@ Contributions are welcome! You can contribute by:
 
 Refer to the [Contribution Guidelines](CONTRIBUTING.md) for more information on contributing to the repository.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE.md).
 
 ## Contact Information
 
