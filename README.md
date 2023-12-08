@@ -34,7 +34,6 @@ Contributions are welcome! You can contribute by:
 - Providing alternative solutions to existing problems.
 - Improving the clarity or efficiency of existing solutions.
 
-Refer to the [Contribution Guidelines](CONTRIBUTING.md) for more information on contributing to the repository.
 
 
 ## Contact Information
