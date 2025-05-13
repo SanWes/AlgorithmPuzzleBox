@@ -55,10 +55,14 @@ var twoSumOptimized = function(nums, target) {
 
     for (let i = 0; i < nums.length; i++) {
         const complement = target - nums[i];
+
+        // if compliment has the corresponding number to achieve our target then we return current index with the compliments index
+        // otherwise we add it to our map for future reference 
         if (numMap.has(complement)) {
             return [numMap.get(complement), i];
         }
         numMap.set(nums[i], i);
+        //This line adds the current number (nums[i]) and its index (i) into the map. This will be helpful for future iterations, as we’ll now be able to check if the complement of future numbers exists in the map.
     }
 
     return [];
