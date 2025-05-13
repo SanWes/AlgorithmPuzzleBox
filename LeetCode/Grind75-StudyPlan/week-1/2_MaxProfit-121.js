@@ -27,6 +27,13 @@ Constraints:
 
 */
 
+/*
+BRUTE FORCE APPROACH 
+Time Complexity: O(n²)
+
+Double Loop
+
+*/ 
 var maxProfit = function (prices) {
 // selling can only happen 1 day after buy 
     let max_profit = 0;
@@ -47,11 +54,46 @@ var maxProfit = function (prices) {
 
 var maxProfit2 = function(prices) {
     if(prices == null || prices.length <= 1) return 0;
-    let minBuy = prices[0];
-    let profit = 0;
+    let minPrice = prices[0];
+    let maxProfit = 0;
     for(let i = 1; i < prices.length; i++) {
-        minBuy = Math.min(minBuy, prices[i]);
-        profit = Math.max(profit, prices[i] - minBuy);
+        minPrice = Math.min(minPrice, prices[i]);
+        maxProfit = Math.max(maxProfit, prices[i] - minPrice);
     }
-    return profit;
+    return maxProfit;
+};
+
+
+/*
+    - array of stock prices on different days 
+    - buy on lowest day - sell on highest marginal difference day (calculate difference and compare)
+    - if no profit return 0 
+            
+            Example:
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+    */ 
+var maxProfit3 = function(prices) {
+    if (!prices || prices.length < 2) return 0; // Edge case
+
+    let minPrice = Infinity; 
+    let bestProfit = 0;
+
+    for (let i = 0; i < prices.length; i++) {
+        if (prices[i] < minPrice) {
+        minPrice = prices[i] ;
+    // console.log(minPrice, "is the minPrice")
+        }
+        else { 
+            let profit = prices[i] - minPrice; // // Potential profit
+            // console.log("Current Profit ",profit, "VS Best Profit", bestProfit )
+                if (bestProfit < profit) {
+                    bestProfit = profit; // Keep the highest profit
+                    // console.log("MAXIMIZING PROFIT --> $$", bestProfit)
+                }
+        }
+    }
+    
+    return bestProfit;
 };

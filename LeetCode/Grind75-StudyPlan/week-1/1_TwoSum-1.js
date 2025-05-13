@@ -51,23 +51,34 @@ Target:  689  -> TwoSum index:  [ 9, 10 ]
 
 
 var twoSumOptimized = function(nums, target) {
+    // Create a new Map to store each number and its index
     const numMap = new Map();
 
     for (let i = 0; i < nums.length; i++) {
+        // Calculate the complement that would add to current number to reach the target
         const complement = target - nums[i];
 
-        // if compliment has the corresponding number to achieve our target then we return current index with the compliments index
-        // otherwise we add it to our map for future reference 
+        // If the complement already exists in the map, return its index and current index
+
         if (numMap.has(complement)) {
             return [numMap.get(complement), i];
         }
+        // otherwise we add it to our map for future reference 
         numMap.set(nums[i], i);
         //This line adds the current number (nums[i]) and its index (i) into the map. This will be helpful for future iterations, as we’ll now be able to check if the complement of future numbers exists in the map.
     }
+  // If no solution is found, return an empty array
 
     return [];
 };
 
+/*
+        Time & Space Complexity:
+Time Complexity: O(n) — We go through the array only once.
+
+Space Complexity: O(n) — We use extra space for the map to store elements and indices.
+
+*/
 
 let nums01 = [2,7,11,15]
 let target01 = 9
